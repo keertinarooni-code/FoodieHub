@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieHub - Order Food Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Foodie<span>Hub</span></h1>
+
+            <div class="search-box">
+                <input type="text" id="searchInput"
+                placeholder="Search for restaurants or food...">
+                <button onclick="searchFood()">Search</button>
+            </div>
+
+            <div class="nav-right">
+                <a href="#home">Home</a>
+                <a href="#restaurants">Restaurants</a>
+                <a href="#categories">Explore</a>
+                <button class="cart-btn" onclick="showCart()">
+                    🛒 Cart (<span id="cartCount">0</span>)
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the best food near you!</h1>
+            <p>Order delicious food from your favourite restaurants.</p>
+            <a href="#restaurants" class="hero-btn">Explore Restaurants</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <h2>What's on your mind?</h2>
+
+        <div class="category-container">
+            <div class="category" onclick="filterFood('All')">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200" alt="All food">
+                <p>All Food</p>
+            </div>
+
+            <div class="category" onclick="filterFood('Pizza')">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200" alt="Pizza">
+                <p>Pizza</p>
+            </div>
+
+            <div class="category" onclick="filterFood('Burger')">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200" alt="Burger">
+                <p>Burger</p>
+            </div>
+
+            <div class="category" onclick="filterFood('Biryani')">
+                <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=200" alt="Biryani">
+                <p>Biryani</p>
+            </div>
+
+            <div class="category" onclick="filterFood('Chinese')">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=200" alt="Chinese">
+                <p>Chinese</p>
+            </div>
+
+            <div class="category" onclick="filterFood('Dessert')">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200" alt="Dessert">
+                <p>Desserts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants -->
+    <section class="restaurants" id="restaurants">
+        <h2>Popular Restaurants</h2>
+        <p class="subtitle">Explore the best restaurants in your city</p>
+
+        <div class="restaurant-container" id="restaurantContainer">
+
+            <!-- Restaurant cards are added using JavaScript -->
+
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close" onclick="closeCart()">×</span>
+            <h2>Your Shopping Cart 🛒</h2>
+
+            <div id="cartItems"></div>
+
+            <h3 id="cartTotal">Total: ₹0</h3>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Place Order
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2>FoodieHub</h2>
+        <p>Bringing happiness to your doorstep ❤️</p>
+        <p>© 2026 FoodieHub. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
